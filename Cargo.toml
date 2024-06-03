@@ -7,10 +7,7 @@ edition = "2021"
 tokio = { version = "1", default-features = false, features = [
   "macros",
   "rt-multi-thread",
-], optional = true }
+] }
 tokio-postgres = { version = "0" }
 postgres-openssl = { version = "0" }
 futures = { version = "0" }
-
-[features]
-unit-tests = ["dep:tokio"]
