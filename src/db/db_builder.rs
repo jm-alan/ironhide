@@ -15,7 +15,7 @@ where
     name: Option<String>,
     role: Option<String>,
     password: Option<String>,
-    pool_size: Option<usize>,
+    pool_size: Option<u32>,
     tls: Option<T>,
 }
 
@@ -66,7 +66,7 @@ where
         self
     }
 
-    pub fn pool_size(mut self, pool_size: usize) -> Self {
+    pub fn pool_size(mut self, pool_size: u32) -> Self {
         self.pool_size = Some(pool_size);
 
         self
@@ -104,8 +104,9 @@ where
             password,
             tls,
             pool_size,
+            pool_inner: vec![],
             pool: Mutex::new(VecDeque::new()),
-            pool_semaphore: Semaphore::new(pool_size),
+            pool_semaphore: Semaphore::new(pool_size as usize),
             connected: false,
         }
     }
