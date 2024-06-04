@@ -44,10 +44,6 @@ where
                 eprintln!("Failed to acquire lock on all DB semaphore permits during drop. You may have dangling connections");
                 eprintln!("{:?}", err);
             };
-
-            println!(
-                "Successfully acquired full semaphore suite; connections should drop safely..."
-            );
         })
     }
 }

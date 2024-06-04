@@ -1,0 +1,9 @@
+[package]
+name = "ironhide_macros"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+quote = "1"
+syn = { version = "2", features = ["extra-traits"] }
+proc-macro2 = "1"

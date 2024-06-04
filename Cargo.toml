@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+ironhide_macros = { path = "ironhide_macros" }
 tokio = { version = "1", default-features = false, features = [
   "macros",
   "rt-multi-thread",
